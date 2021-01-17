@@ -4,6 +4,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const PreloadWebpackPlugin = require('preload-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
@@ -26,6 +27,9 @@ const config = {
     ],
   },
   plugins: [
+    new PreloadWebpackPlugin({
+      include: 'initial'
+    }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
@@ -60,10 +64,8 @@ module.exports = (env, argv) => {
         cacheGroups: {
           vendor: {
             test: /[\\/]node_modules[\\/]/,
-            chunks: 'initial',
-            name: 'vender',
-            priority: 10,
-            enforce: true
+            chunks: 'async',
+            name: 'vender'
           }
         }
       },

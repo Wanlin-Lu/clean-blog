@@ -1,1 +1,1 @@
-console.log('hello webpack jquery')
+console.log('hello webpack jquery from js')
