@@ -1,0 +1,16 @@
+{
+  "name": "bootstrap-clean-blog",
+  "version": "1.0.0",
+  "description": "clean blog developed with bootstrap & jquery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jQuery",
+    "bootstrap",
+    "webpack"
+  ],
+  "author": "Wanlin-Lu",
+  "license": "ISC"
+}
