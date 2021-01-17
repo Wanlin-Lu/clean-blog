@@ -4,6 +4,9 @@
   "description": "clean blog developed with bootstrap & jquery",
   "main": "index.js",
   "scripts": {
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --mode=development --open --config webpack/webpack.config.js",
+    "build": "cross-env NODE_ENV=production --progress --config webpack/webpack.config.js",
+    "start": "npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -12,5 +15,21 @@
     "webpack"
   ],
   "author": "Wanlin-Lu",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^7.0.0",
+    "cross-env": "^7.0.3",
+    "glob": "^7.1.6",
+    "html-webpack-plugin": "^4.5.1",
+    "mini-css-extract-plugin": "^1.3.4",
+    "preload-webpack-plugin": "^2.3.0",
+    "terser-webpack-plugin": "^5.1.1",
+    "webpack": "^5.15.0",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "^3.11.2"
+  }
 }
