@@ -16,7 +16,6 @@
   },
   "rules": {
     "no-console": "warn",
-    "indent": ["warn", 2],
-    "semi": "error"
+    "indent": ["warn", 2]
   }
 }

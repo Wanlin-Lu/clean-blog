@@ -1,1 +1,3 @@
-# clean-blog with jQuery & bootstrap
+# webpack-jquery-bootstrap
+## basic webpack/babel/eslint
+
