@@ -28,3 +28,8 @@ const img = document.createElement('img')
 img.src = icon
 document.body.appendChild(element)
 document.body.appendChild(img)
+
+$(function() {
+	$('pre').text('jQuery')
+	alert('import jquery to webpack!done!')
+})
