@@ -1,0 +1,88 @@
+.header {
+  width: 100%;
+  position: relative;
+  background-color: $white;
+  box-shadow: $header-box-shadow;
+
+  .navbar-light {
+    .navbar-toggler {
+      border: none;
+      padding: 0;
+    }
+  }
+
+  .navbar-nav {
+    @include media-breakpoint-up(sm) {
+      margin-top: 0 !important;
+    }
+
+    @include media-breakpoint-down(xs) {
+      .dropdown-menu {
+        border: none;
+      }
+    }
+
+    .dropdown-item {
+      color: $font-color;
+    }
+
+    .nav-link.dropdown-toggle {
+      &:after {
+        content: "\f078";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        border: none;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .social-part {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @include media-breakpoint-down(sm) {
+      margin: 10px 0px;
+      text-align: right;
+    }
+
+    li {
+      display: inline-block;
+      margin: 0px 10px;
+      border: $border-default;
+      @include transition(all, $transition-speed);
+
+      &:hover {
+        @include transition(all, $transition-speed);
+        @include translate(0, -2.5px);
+      }
+
+      .fa-facebook-f {
+        background-color: $facebook-color;
+      }
+
+      .fa-twitter {
+        background-color: $twitter-color;
+      }
+
+      .fa-instagram {
+        background-color: $instagram-color;
+      }
+
+      a {
+        color: $white;
+        padding: 10px 15px;
+        text-decoration: none;
+        @include transition(all, $transition-speed);
+
+        &:hover {
+          opacity: 0.8;
+          @include transition(all, $transition-speed);
+        }
+      }
+    }
+  }
+}
+
+
+

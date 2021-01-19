@@ -1,10 +1,12 @@
 const path = require('path')
+const glob = require('glob')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
-module.exports = {
+const config = {
 	entry: {
-		app: path.join(__dirname,'src','index.js')
+		app: path.join(__dirname,'src','/js/index.js')
 	},
 	module: {
 		rules: [
@@ -25,14 +27,35 @@ module.exports = {
 			}
 		]
 	},
+	resolve: {
+		alias: {
+			images: path.resolve(__dirname, 'src/res/images')
+		}
+	},
 	plugins: [
-		new CleanWebpackPlugin(),
-		new HtmlWebpackPlugin({
-			title: 'Output Management'
-		})
+		new webpack.ProvidePlugin({
+			$: 'jquery',
+			jQuery: 'jquery'
+		}),
+		new CleanWebpackPlugin()
 	],
 	output: {
 		filename: '[name].bundle.js',
 		path: path.resolve(__dirname,'dist')
 	}
 }
+
+const files = glob.sync('./src/html/*.html')
+files.forEach((file) => {
+  config.plugins.push(
+    new HtmlWebpackPlugin({
+      filename: path.basename(file),
+      template: file,
+      inject: true,
+      favicon: path.resolve(__dirname,'./src/res/favicon.ico'),
+      minify: process.env.NODE_ENV === 'production',
+    })
+  )
+})
+
+module.exports = config

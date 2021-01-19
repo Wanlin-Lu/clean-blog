@@ -1,7 +1,6 @@
 body{
 	background-color: #006789;
-	background-image: url('./res/ridekill.jpg');
-
+	/*background-image: url('../../res/ridekill.jpg');*/
 }
 pre {
 	transition: color 2s linear 1s;

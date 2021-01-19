@@ -20,10 +20,11 @@ module.exports = merge(common, {
 	        {
 	        	loader: MiniCssExtractPlugin.loader,
 	        	options: {
-	        		publicPath: '/'
+	        		publicPath: '../'
 	        	}
 	        },
 	        'css-loader',
+          'resolve-url-loader',
 	        'sass-loader',
         ]
       },
@@ -42,7 +43,7 @@ module.exports = merge(common, {
       			options: {
       				mozjpeg: {
       					progressive: true,
-      					quality: 65,
+      					quality: 60,
       				},
       				svgo: {
       					plugins: [
@@ -85,6 +86,19 @@ module.exports = merge(common, {
       }
 		]
 	},
+  optimization: {
+    minimize: true,
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          chunks: 'initial',
+          name: 'vendor',
+        }
+      }
+    }
+  },
 	plugins: [
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',
