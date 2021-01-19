@@ -1,88 +1,96 @@
-.header {
-  width: 100%;
+// Styling for the masthead
+header.masthead {
+  // TIP: Background images are set within the HTML using inline CSS!
+  margin-bottom: 50px;
+  background: no-repeat center center;
+  background-color: $gray-600;
+  background-attachment: scroll;
   position: relative;
-  background-color: $white;
-  box-shadow: $header-box-shadow;
+  @include background-cover;
 
-  .navbar-light {
-    .navbar-toggler {
-      border: none;
-      padding: 0;
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $gray-900;
+    opacity: 0.5;
+  }
+
+  .page-heading,
+  .post-heading,
+  .site-heading {
+    padding: 200px 0 150px;
+    color: white;
+
+    @media only screen and (min-width: 768px) {
+      padding: 200px 0;
     }
   }
 
-  .navbar-nav {
-    @include media-breakpoint-up(sm) {
-      margin-top: 0 !important;
+  .page-heading,
+  .site-heading {
+    text-align: center;
+
+    h1 {
+      font-size: 50px;
+      margin-top: 0;
     }
 
-    @include media-breakpoint-down(xs) {
-      .dropdown-menu {
-        border: none;
-      }
+    .subheading {
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 1.1;
+      display: block;
+      margin: 10px 0 0;
+      @include sans-serif-font;
     }
 
-    .dropdown-item {
-      color: $font-color;
-    }
-
-    .nav-link.dropdown-toggle {
-      &:after {
-        content: "\f078";
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        border: none;
-        vertical-align: middle;
+    @media only screen and (min-width: 768px) {
+      h1 {
+        font-size: 80px;
       }
     }
   }
 
-  .social-part {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    @include media-breakpoint-down(sm) {
-      margin: 10px 0px;
-      text-align: right;
+  .post-heading {
+    h1 {
+      font-size: 35px;
     }
 
-    li {
-      display: inline-block;
-      margin: 0px 10px;
-      border: $border-default;
-      @include transition(all, $transition-speed);
+    .meta,
+    .subheading {
+      line-height: 1.1;
+      display: block;
+    }
 
-      &:hover {
-        @include transition(all, $transition-speed);
-        @include translate(0, -2.5px);
-      }
+    .subheading {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 10px 0 30px;
+      @include sans-serif-font;
+    }
 
-      .fa-facebook-f {
-        background-color: $facebook-color;
-      }
-
-      .fa-twitter {
-        background-color: $twitter-color;
-      }
-
-      .fa-instagram {
-        background-color: $instagram-color;
-      }
+    .meta {
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      @include serif-font;
 
       a {
         color: $white;
-        padding: 10px 15px;
-        text-decoration: none;
-        @include transition(all, $transition-speed);
+      }
+    }
 
-        &:hover {
-          opacity: 0.8;
-          @include transition(all, $transition-speed);
-        }
+    @media only screen and (min-width: 768px) {
+      h1 {
+        font-size: 55px;
+      }
+
+      .subheading {
+        font-size: 30px;
       }
     }
   }
 }
-
-
-

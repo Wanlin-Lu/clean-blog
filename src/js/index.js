@@ -7,8 +7,8 @@ import "../styles/sass/style.scss";
 // Import application css styles
 import "../styles/css/style.css";
 
-import { navigation } from "./navigation";
+import { cleanBlog } from "./clean-blog";
 
 $(document).ready(function() {
-  navigation();
+  cleanBlog();
 });

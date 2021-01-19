@@ -17,13 +17,16 @@
 @import "layout/header";
 @import "layout/footer";
 @import "layout/main";
+@import "layout/navbar";
 
 // Components
 @import "components/button";
 
 // Pages
 @import "pages/homepage";
+@import "pages/contact";
 @import "pages/404";
+@import "pages/post";
 
 // Themes
 @import "themes/default";

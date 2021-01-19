@@ -1,11 +1,14 @@
-.main {
-  padding-top: 20px;
-  background: $transparent-bg;
-  flex: 1 0;
-}
-
-.page-title {
-  color: $white;
-  text-decoration: underline;
-  text-underline-position: under;
+body {
+  .masthead-index {
+    background-image: url('../../../res/images/home-bg.jpg');
+  }
+  .masthead-post {
+    background-image: url('../../../res/images/post-bg.jpg')
+  }
+  .masthead-contact {
+    background-image: url('../../../res/images/contact-bg.jpg');
+  }
+  .masthead-about {
+    background-image: url('../../../res/images/about-bg.jpg');
+  }
 }
