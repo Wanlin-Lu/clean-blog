@@ -5,9 +5,25 @@
 
 // Vendors
 @import "vendors/bootstrap";
+@import "vendors/fontawesome";
 
 // Base
 @import "base/base";
+@import "base/fonts";
+@import "base/typography";
+@import "base/utils";
 
 // Layout
 @import "layout/header";
+@import "layout/footer";
+@import "layout/main";
+
+// Components
+@import "components/button";
+
+// Pages
+@import "pages/homepage";
+@import "pages/404";
+
+// Themes
+@import "themes/default";

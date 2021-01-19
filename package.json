@@ -46,6 +46,7 @@
     "xml-loader": "^1.2.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
     "lodash": "^4.17.20",
