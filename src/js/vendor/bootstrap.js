@@ -8,7 +8,7 @@ import 'popper.js'
 // You can specify which plugins you need
 // import { util, Alert, Tooltip, Toast, Popover } from 'bootstrap';
 
-import "bootstrap";
+// import "bootstrap";
 // import only the necessary
 import "bootstrap/js/dist/util";
 import "bootstrap/js/dist/alert";
